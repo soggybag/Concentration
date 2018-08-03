@@ -46,7 +46,7 @@ enum colors {
     // Define a list of all cases
     let allColors = [colors.red, .green, .blue, .cyan, .yellow, .magenta]
     // get a random index
-    let index = Int(arc4random() % UInt32(allColors.count))
+    let index = Int.random(n: allColors.count)
     // return a random color
     return allColors[index]
   }
