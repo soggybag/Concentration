@@ -8,7 +8,10 @@
 
 import SpriteKit
 
+// Manage colors with an enum
+
 enum colors {
+  // Define the cases
   case gray
   case red
   case green
@@ -17,7 +20,9 @@ enum colors {
   case yellow
   case magenta
   
+  // Add an instance method
   func toUIColor() -> UIColor {
+    // Return a UIColor for each case
     switch self {
     case .gray:
       return UIColor.gray
@@ -36,9 +41,13 @@ enum colors {
     }
   }
   
+  // Add a static method
   static func random() -> colors {
+    // Define a list of all cases
     let allColors = [colors.red, .green, .blue, .cyan, .yellow, .magenta]
+    // get a random index
     let index = Int(arc4random() % UInt32(allColors.count))
+    // return a random color
     return allColors[index]
   }
 }

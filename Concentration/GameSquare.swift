@@ -8,19 +8,23 @@
 
 import SpriteKit
 
+// A game square subclasses SKSpriteNode
 class GameSquare: SKSpriteNode {
-  
+  // Define two properties
   var isFlipped: Bool = true
   var myColor: colors
   
+  // Initialize the GameSquare
   init(color: colors, size: CGSize) {
+    // Must initialize this before calling super!
     self.myColor = color
-    
+    // Must call super with the designated initializer
     super.init(texture: nil, color: color.toUIColor(), size: size)
-    
+    // This object accepts touch events
     isUserInteractionEnabled = true
   }
   
+  // Flip the square
   func flip() {
     isFlipped = !isFlipped
     if isFlipped {
@@ -30,6 +34,7 @@ class GameSquare: SKSpriteNode {
     }
   }
   
+  // Handle touch events
   override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
     flip()
   }
