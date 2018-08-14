@@ -16,6 +16,7 @@ class GameSquare: SKSpriteNode {
   
   // Initialize the GameSquare
   init(color: colors, size: CGSize) {
+    
     // Must initialize this before calling super!
     self.myColor = color
     // Must call super with the designated initializer

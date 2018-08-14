@@ -19,6 +19,8 @@ enum colors {
   case cyan
   case yellow
   case magenta
+  case orange
+  case pink
   
   // Add an instance method
   func toUIColor() -> UIColor {
@@ -38,13 +40,17 @@ enum colors {
       return UIColor.yellow
     case .magenta:
       return UIColor.magenta
+    case .orange:
+      return UIColor.orange
+    case .pink:
+      return UIColor(displayP3Red: 1, green: 0.65, blue: 0.65, alpha: 1)
     }
   }
   
   // Add a static method
   static func random() -> colors {
     // Define a list of all cases
-    let allColors = [colors.red, .green, .blue, .cyan, .yellow, .magenta]
+    let allColors = [colors.red, .green, .blue, .cyan, .yellow, .magenta, .orange, .pink]
     // get a random index
     let index = Int.random(n: allColors.count)
     // return a random color
